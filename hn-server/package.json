@@ -1,0 +1,46 @@
+{
+  "name": "hn-server",
+  "version": "0.1.0",
+  "description": "MCP server for fetching and parsing Hacker News stories",
+  "type": "module",
+  "bin": {
+    "hn-server": "./build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "prepare": "npm run build",
+    "watch": "tsc --watch",
+    "inspector": "npx @modelcontextprotocol/inspector build/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "0.6.0",
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "hacker-news",
+    "hn",
+    "news",
+    "api",
+    "scraper"
+  ],
+  "author": "Manav Kundra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pskill9/hn-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pskill9/hn-server/issues"
+  },
+  "homepage": "https://github.com/pskill9/hn-server#readme"
+}
